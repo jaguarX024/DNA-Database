@@ -28,6 +28,12 @@ This class represents a DNA sample, with its key attribute being the DNA sequenc
 
 *Insertion Trigger: 
 
-If the load factor exceeds 0.5 after an insertion, the table rehashes to a new prime-sized table, with capacity being the smallest prime greater than 4 times the current number of data points (occupied minus deleted buckets).
-Deletion Trigger: If the number of deleted buckets exceeds 80% of the total occupied buckets after a deletion, the table rehashes to a new prime-sized table, with capacity being the smallest prime greater than 4 times the current number of data points.
-Deleted Buckets: During rehashing, deleted buckets are permanently removed and not transferred to the new table.
+If the load factor exceeds 0.5 after an insertion, the table rehashes to a new prime-sized table.
+
+Deletion Trigger:
+
+If the number of deleted buckets exceeds 80% of the total occupied buckets after a deletion, the table rehashes to a new prime-sized table.
+
+Deleted Buckets: 
+
+During rehashing, deleted buckets are permanently removed and not transferred to the new table.
