@@ -16,24 +16,14 @@ The application uses DNA sequences (combinations of Adenine (A), Cytosine (C), G
 
 **Classes:**
 
-* **DnaDb**
+* **DnaDb**: This class implements the core database functionality, managing the hash table, handling insertions, deletions, finds, and overseeing the rehashing process.
 
-This class implements the core database functionality, managing the hash table, handling insertions, deletions, finds, and overseeing the rehashing process.
-
-* **DNA**
-
-This class represents a DNA sample, with its key attribute being the DNA sequence.
+* **DNA**: This class represents a DNA sample, with its key attribute being the DNA sequence.
 
 **Rehashing Logic:**
 
-* **Insertion Trigger:**
+* **Insertion Trigger:** If the load factor exceeds 0.5 after an insertion, the table rehashes to a new prime-sized table.
 
-If the load factor exceeds 0.5 after an insertion, the table rehashes to a new prime-sized table.
+* **Deletion Trigger:** If the number of deleted buckets exceeds 80% of the total occupied buckets after a deletion, the table rehashes to a new prime-sized table.
 
-* **Deletion Trigger:**
-
-If the number of deleted buckets exceeds 80% of the total occupied buckets after a deletion, the table rehashes to a new prime-sized table.
-
-* **Deleted Buckets:**
-
-During rehashing, deleted buckets are permanently removed and not transferred to the new table.
+* **Deleted Buckets:** During rehashing, deleted buckets are permanently removed and not transferred to the new table.
